@@ -8,7 +8,9 @@ ENV HASURA_GRAPHQL_ENABLE_CONSOLE=true
 CMD graphql-engine \
     --database-url $DATABASE_URL \
     serve \
-    --server-port $PORT
+    --server-port $PORT \
+    --admin-secret admin123 \
+    --jwt-secret '{"type":"HS256", "key": "3EK6FD+o0+c7tzBNVfjpMkNDi2yARAAKzQlk8O2IKoxQu4nF7EdAh8s3TwpHwrdWT6R"}'
 
 ## Comment the command above and use the command below to
 ## enable an access-key and an auth-hook
